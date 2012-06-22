@@ -1,0 +1,28 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    chunky_png (1.2.5)
+    compass (0.11.7)
+      chunky_png (~> 1.2)
+      fssm (>= 0.2.7)
+      sass (~> 3.1)
+    fssm (0.2.8.1)
+    haml (3.1.4)
+    oyster (0.9.5)
+    packr (3.2.0)
+      oyster (>= 0.9.5)
+    rack (1.4.1)
+    sass (3.1.14)
+    staticmatic (0.11.1)
+      compass (>= 0.10.0)
+      haml (>= 2.0.0)
+      rack (>= 1.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  haml
+  packr
+  sass
+  staticmatic
