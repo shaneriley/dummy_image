@@ -1,2 +1,12 @@
-%img(data-src="/placeholder/400x300/red/blue" alt="")
-%img(src="/placeholder/160x600" alt="")
+%p
+  Inline override
+  %br/
+  %img.default(data-src="/placeholder/400x300/red/blue" alt="")
+%p
+  Default
+  %br/
+  %img.default(src="/placeholder/160x600" alt="")
+%p
+  Javascript options override
+  %br/
+  %img#override(data-src="/dummy/200x200" alt="")

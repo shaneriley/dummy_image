@@ -6,12 +6,24 @@ var DummyImage = {
   },
   font: "16px Tahoma",
   __canvas__: document.createElement("canvas"),
-  init: function() {
+  init: function(opts) {
+    this._extend(this, opts);
     this.__ctx__ = this.__canvas__.getContext("2d");
     this.path_rxp = new RegExp("^.*/" + DummyImage.path + "/");
     this.__ctx__.font = this.font;
     this.__ctx__.textAlign = "center";
     this.__ctx__.textBaseline = "middle";
+  },
+  _extend: function(obj, extender) {
+    for (var k in extender) {
+      if (k in obj) {
+        if (typeof obj[k] === "object") {
+          obj[k] = DummyImage._extend(obj[k], extender[k]);
+        }
+        else { obj[k] = extender[k]; }
+      }
+    }
+    return obj;
   },
   _createImage: function(img) {
     var d = DummyImage,
@@ -41,16 +53,21 @@ var DummyImage = {
     img.height = canvas.height;
     img.src = canvas.toDataURL();
   },
-  generate: function() {
-    var imgs = [];
-    Array.prototype.forEach.call(document.querySelectorAll("img"), function(img) {
+  generate: function(els, overrides) {
+    var imgs = [],
+        opts = overrides || undefined;
+    if (!els || !/NodeList|HTMLImageElement/.test(els.constructor)) {
+      opts = els;
+      els = document.querySelectorAll("img");
+    }
+    else if (!els.length) { els = [els]; }
+    if (opts) { DummyImage.init(opts); }
+    Array.prototype.forEach.call(els, function(img) {
       var src = img.dataset.src || img.src;
-      console.log(src);
       DummyImage.path_rxp.test(src) && imgs.push(img);
     });
     imgs.forEach(DummyImage._createImage);
   }
 };
-DummyImage.init();
 
-document.addEventListener("DOMContentLoaded", DummyImage.generate, false);
+DummyImage.init();

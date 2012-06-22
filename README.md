@@ -19,15 +19,26 @@ To avoid 404 errors in your log, you can replace the src attribute with a
 data-src attribute. Use the same path as before. No configuration changes
 are needed for this support.
 
+Call the generator by calling `DummyImage.generate();`. Optional arguments
+include the element(s) and an options object. Either argument or both can
+be passed in.
+
+```DummyImage.generate(window.override, {
+  path: "dummy",
+  colors: {
+    text: "0066cc",
+    background: "333333"
+  }
+});```
+
 ## Options
 
-Since this was created in under an hour, the options have not been abstracted
-in such a way that different options can be used for specific sets of elements.
-This will be implemented in the future, but in the mean time you can open up
-dummy image and change the path, text and background colors, and font (CSS
-format). These will be used as the defaults site-wide.
-
-## To Do
-
-Call dummy image on a group of elements rather than all that match the path,
-override defaults on per-group and/or per-element basis.
+```
+{
+  path: "placeholder", // Path in your src, ie: "/placeholder/160x600"
+  colors: {
+    text: "333333", // Text color
+    background: "ececec" // Image background color
+  },
+  font: "16px Tahoma", // CSS font shorthand syntax
+}```
