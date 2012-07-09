@@ -63,7 +63,7 @@ var DummyImage = {
     else if (!els.length) { els = [els]; }
     if (opts) { DummyImage.init(opts); }
     Array.prototype.forEach.call(els, function(img) {
-      var src = img.dataset.src || img.src;
+      var src = img.dataset ? img.dataset.src : img.src;
       DummyImage.path_rxp.test(src) && imgs.push(img);
     });
     imgs.forEach(DummyImage._createImage);
