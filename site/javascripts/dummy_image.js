@@ -1,3 +1,8 @@
+/* DummyImage version 1.0.0
+ * (c) 2012 Shane Riley
+ * Licensed under GPL 2.0 (http://www.gnu.org/licenses/gpl-2.0.html)
+ * Source hosted at http://www.gnu.org/licenses/gpl-2.0.html
+ */
 var DummyImage = {
   path: "placeholder",
   colors: {
@@ -63,7 +68,7 @@ var DummyImage = {
     else if (!els.length) { els = [els]; }
     if (opts) { DummyImage.init(opts); }
     Array.prototype.forEach.call(els, function(img) {
-      var src = img.dataset ? img.dataset.src : img.src;
+      var src = img.dataset && img.dataset.src ? img.dataset.src : img.src;
       DummyImage.path_rxp.test(src) && imgs.push(img);
     });
     imgs.forEach(DummyImage._createImage);
