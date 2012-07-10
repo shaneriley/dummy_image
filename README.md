@@ -1,4 +1,9 @@
-# Dummy Image for Javascript
+# Dummy Image for Javascript, Version 1.0.0
+
+A method of including dummy images in your HTML as img tags without having
+to export individual dummy images of varying sizes.
+
+Licensed under GPL 2.0 (http://www.gnu.org/licenses/gpl-2.0.html)
 
 ## Dependencies
 
@@ -42,3 +47,4 @@ be passed in.
   },
   font: "16px Tahoma", // CSS font shorthand syntax
 }```
+
