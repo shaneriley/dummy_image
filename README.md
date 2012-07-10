@@ -18,7 +18,9 @@ path. You can optionally specify background and text colors in the path after
 the dimensions.
 
 A full dummy image path will look like this:
-```<img src="/placeholder/160x600/ececec/0066cc" alt="Skyscraper" />```
+```html
+<img src="/placeholder/160x600/ececec/0066cc" alt="Skyscraper" />
+```
 
 To avoid 404 errors in your log, you can replace the src attribute with a
 data-src attribute. Use the same path as before. No configuration changes
@@ -28,17 +30,19 @@ Call the generator by calling `DummyImage.generate();`. Optional arguments
 include the element(s) and an options object. Either argument or both can
 be passed in.
 
-```DummyImage.generate(window.override, {
+```javascript
+DummyImage.generate(window.override, {
   path: "dummy",
   colors: {
     text: "0066cc",
     background: "333333"
   }
-});```
+});
+```
 
 ## Options
 
-```
+```javascript
 {
   path: "placeholder", // Path in your src, ie: "/placeholder/160x600"
   colors: {
@@ -46,5 +50,6 @@ be passed in.
     background: "ececec" // Image background color
   },
   font: "16px Tahoma", // CSS font shorthand syntax
-}```
+}
+```
 
