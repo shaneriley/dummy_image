@@ -17,10 +17,7 @@ By default, dummy image looks for image tags that have a path that contains
 path. You can optionally specify background and text colors in the path after
 the dimensions.
 
-A full dummy image path will look like this:
-```html
-<img src="/placeholder/160x600/ececec/0066cc" alt="Skyscraper" />
-```
+A full dummy image path will look like this:```<img src="/placeholder/160x600/ececec/0066cc" alt="Skyscraper" />```
 
 To avoid 404 errors in your log, you can replace the src attribute with a
 data-src attribute. Use the same path as before. No configuration changes
