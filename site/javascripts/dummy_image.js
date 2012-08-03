@@ -1,4 +1,4 @@
-/* DummyImage version 1.0.0
+/* DummyImage version 1.1.0
  * (c) 2012 Shane Riley
  * Licensed under GPL 2.0 (http://www.gnu.org/licenses/gpl-2.0.html)
  * Source hosted at http://www.gnu.org/licenses/gpl-2.0.html
@@ -30,14 +30,18 @@ var DummyImage = {
     }
     return obj;
   },
+  _convertColor: function(color) {
+    var r = /^#?[0-9a-f]{3}[0-9a-f]{0,3}$/i;
+    return r.test(color) ? "#" + color : color;
+  },
   _createImage: function(img) {
     var d = DummyImage,
         ctx = d.__ctx__,
         w, h, text_w, text_h,
         src = img.dataset.src || img.src,
         data = src.replace(d.path_rxp, "").split("/");
-        background = data[1] || d.colors.background,
-        text = data[2] || d.colors.text;
+        background = d._convertColor(data[1] || d.colors.background),
+        text = d._convertColor(data[2] || d.colors.text);
     w = +data[0].replace(/x.+$/i, "");
     h = +data[0].replace(/^.+x/i, "");
     ctx.canvas.width = w;
