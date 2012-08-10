@@ -1,16 +1,39 @@
-%p
-  Inline override
-  %br/
-  %img.default(data-src="/placeholder/400x300/red/blue" alt="")
-%p
-  Default
-  %br/
-  %img.default(src="/placeholder/160x600" alt="")
-%p
-  Javascript options override
-  %br/
-  %img#override(data-src="/dummy/200x200" alt="")
-%p
-  Resize text to fit image
-  %br/
-  %img.default(data-src="/placeholder/50x50" alt="")
+%section#home
+  %article
+    %h1 dummy image dot js
+    %h2 The Javascript Placeholder Image Generator
+    %ul
+      %li Platform-independent; renders placeholders client-side using Canvas
+      %li
+        Customizable size, color, path and font; full rundown of options in the 
+        %a(href="https://github.com/shaneriley/dummy_image") readme
+      %li
+        Just include #{link_to "dummy_image.js", "https://github.com/shaneriley/dummy_image/tree/master/site/javascripts"}, call
+        %code DummyImage.generate();
+        and never make another placeholder image again!
+  %aside
+    %img.default(data-src="/placeholder/180x100/" alt="")
+    %p
+      %code&= '<img data-src="/placeholder/180x100" />'
+    %img.default(data-src="/placeholder/280x40/teal/white" alt="")
+    %p
+      %code&= '<img data-src="/placeholder/280x40/teal/white" />'
+    %img.default(data-src="/placeholder/200x200/ae1f23/ddd" alt="")
+    %p
+      %code&= '<img data-src="/placeholder/200x200/ae1f23/ddd" />'
+  %footer
+    %p
+      developed by
+      Shane Riley (
+      %a(href="http://twitter.com/shaneriley")<>@shaneriley
+      )
+    %p
+      site thrown together by Cameron Daigle
+      (
+      %a(href="http://twitter.com/camerondaigle")<>@camerondaigle
+      )
+    %p
+      we work for #{link_to "Hashrocket", "http://hashrocket.com"},
+      a premiere Ruby on Rails design & development consultancy
+    %p
+      %img(src="http://hashrocket.com/images/logo_footer.png" alt="Hashrocket logo")
