@@ -1,0 +1,183 @@
+/* line 1 */
+ul, ol {
+  list-style: none;
+}
+
+/* line 3 */
+h1, h2, h3, h4, h5, h6, pre, code {
+  font-size: 1em;
+}
+
+/* line 5 */
+ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, body, html, p, blockquote, fieldset, input, dl, dt, dd {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 8 */
+a img, :link img, :visited img, fieldset {
+  border: none;
+}
+
+/* line 10 */
+address {
+  font-style: normal;
+}
+
+/* line 12 */
+header, section, article, nav, footer, hgroup {
+  display: block;
+}
+
+/* line 14 */
+mark {
+  background: transparent;
+}
+
+/* line 17 */
+body {
+  font-family: "Dosis", "Helvetica Neue", Helvetica, sans-serif;
+  background: #f1f6f8 url("/images/bg.png");
+  color: #343637;
+}
+
+/* line 22 */
+a {
+  text-decoration: none;
+  color: #0097d3;
+}
+
+@media screen and (max-width: 480px) {
+  /* line 27 */
+  #github {
+    display: none;
+  }
+}
+/* line 31 */
+#home article {
+  text-shadow: 0 2px 0 white;
+  margin: 0 50px;
+}
+@media screen and (max-width: 480px) {
+  /* line 31 */
+  #home article {
+    margin: 0 10px;
+  }
+}
+/* line 36 */
+#home article h1 {
+  font-size: 100px;
+  font-weight: 200;
+}
+@media screen and (max-width: 850px) {
+  /* line 36 */
+  #home article h1 {
+    font-size: 50px;
+  }
+}
+@media screen and (max-width: 480px) {
+  /* line 36 */
+  #home article h1 {
+    font-size: 38px;
+  }
+}
+/* line 43 */
+#home article h2 {
+  font-size: 36px;
+  font-weight: 300;
+  margin: 0 0 40px 0;
+}
+@media screen and (max-width: 850px) {
+  /* line 43 */
+  #home article h2 {
+    font-size: 18px;
+    margin: 0 0 20px 0;
+  }
+}
+@media screen and (max-width: 480px) {
+  /* line 43 */
+  #home article h2 {
+    font-size: 16px;
+  }
+}
+/* line 52 */
+#home article code {
+  background: white;
+  padding: 3px;
+  font-size: 90%;
+}
+/* line 56 */
+#home article ul {
+  padding: 0 60px;
+  list-style-type: disc;
+  font-size: 18px;
+  line-height: 140%;
+  margin: 0 0 40px 0;
+}
+@media screen and (max-width: 850px) {
+  /* line 56 */
+  #home article ul {
+    padding: 0 30px;
+  }
+}
+@media screen and (max-width: 480px) {
+  /* line 56 */
+  #home article ul {
+    font-size: 14px;
+    margin: 0 0 20px 0;
+    padding: 0 20px;
+  }
+}
+/* line 68 */
+#home article ul li {
+  margin: 0 0 10px 0;
+}
+/* line 70 */
+#home aside {
+  background: #343637;
+  padding: 20px 50px 0 80px;
+  margin: 0 0 40px 0;
+  color: white;
+  border-bottom: 1px solid #141617;
+  box-shadow: inset 0 0 30px #141617;
+}
+@media screen and (max-width: 480px) {
+  /* line 70 */
+  #home aside {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 0 20px 0;
+  }
+}
+/* line 81 */
+#home aside img {
+  display: block;
+}
+/* line 83 */
+#home aside p {
+  margin: 0 0 20px 0;
+}
+
+/* line 86 */
+footer {
+  padding: 0 50px;
+  font-size: 12px;
+  line-height: 18px;
+  font-family: Thonburi, Helvetica, sans-serif;
+}
+@media screen and (max-width: 480px) {
+  /* line 86 */
+  footer {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  /* line 94 */
+  footer img {
+    width: 25px;
+    height: 25px;
+  }
+}
+/* line 97 */
+footer p {
+  margin: 0 0 10px 0;
+}
