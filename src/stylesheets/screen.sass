@@ -1,4 +1,98 @@
+ul,ol 
+  list-style: none
+h1,h2,h3,h4,h5,h6,pre,code 
+  font-size: 1em
+ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,body,html,p,blockquote,fieldset,input,dl,dt,dd 
+  margin: 0
+  padding: 0
+a img,:link img,:visited img, fieldset 
+  border: none
+address 
+  font-style: normal
+header, section, article, nav, footer, hgroup 
+  display: block
+mark 
+  background: transparent
+
 body
-  font:
-    family: Verdana
-    size: 10pt
+  font-family: "Dosis", "Helvetica Neue", Helvetica, sans-serif
+  background: #f1f6f8 url("/images/bg.png")
+  color: #343637
+
+a
+  text-decoration: none
+  color: #0097d3
+
+@media screen and (max-width: 480px)
+  #github
+    display: none
+
+#home
+  article
+    text-shadow: 0 2px 0 #fff
+    margin: 0 50px
+    @media screen and (max-width: 480px)
+      margin: 0 10px
+    h1
+      font-size: 100px
+      font-weight: 200
+      @media screen and (max-width: 850px)
+        font-size: 50px
+      @media screen and (max-width: 480px)
+        font-size: 38px
+    h2
+      font-size: 36px
+      font-weight: 300
+      margin: 0 0 40px 0
+      @media screen and (max-width: 850px)
+        font-size: 18px
+        margin: 0 0 20px 0
+      @media screen and (max-width: 480px)
+        font-size: 16px
+    code
+      background: #fff
+      padding: 3px
+      font-size: 90%
+    ul
+      padding: 0 60px
+      list-style-type: disc
+      font-size: 18px
+      line-height: 140%
+      margin: 0 0 40px 0
+      @media screen and (max-width: 850px)
+        padding: 0 30px
+      @media screen and (max-width: 480px)
+        font-size: 14px
+        margin: 0 0 20px 0
+        padding: 0 20px
+      li
+        margin: 0 0 10px 0
+  aside
+    background: #343637
+    padding: 20px 50px 0 80px
+    margin: 0 0 40px 0
+    color: #fff
+    border-bottom: 1px solid #141617
+    box-shadow: inset 0 0 30px #141617
+    @media screen and (max-width: 480px)
+      padding-left: 20px
+      padding-right: 20px
+      margin: 0 0 20px 0
+    img
+      display: block
+    p
+      margin: 0 0 20px 0
+
+footer
+  padding: 0 50px
+  font-size: 12px
+  line-height: 18px
+  font-family: Thonburi, Helvetica, sans-serif
+  @media screen and (max-width: 480px)
+    padding-left: 20px
+    padding-right: 20px
+    img
+      width: 25px
+      height: 25px
+  p
+    margin: 0 0 10px 0
