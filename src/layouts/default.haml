@@ -3,6 +3,10 @@
   %head
     %title Dummy Image
     = stylesheets
+    %link(href='http://fonts.googleapis.com/css?family=Dosis:200,300,500' rel='stylesheet' type='text/css')
     = javascripts "dummy_image", "init"
+    %meta(name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0")
   %body
     = yield
+    %a#github(href="https://github.com/shaneriley/dummy_image")
+      %img(style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub")
