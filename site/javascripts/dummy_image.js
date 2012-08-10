@@ -1,4 +1,4 @@
-/* DummyImage version 1.1.0
+/* DummyImage version 1.2.0
  * (c) 2012 Shane Riley
  * Licensed under GPL 2.0 (http://www.gnu.org/licenses/gpl-2.0.html)
  * Source hosted at http://www.gnu.org/licenses/gpl-2.0.html
@@ -42,6 +42,16 @@ var DummyImage = {
         data = src.replace(d.path_rxp, "").split("/");
         background = d._convertColor(data[1] || d.colors.background),
         text = d._convertColor(data[2] || d.colors.text);
+    var checkFontSize = function() {
+      text_w = w - ctx.measureText(w + " X " + h).width;
+      text_h = h + +/\d+/.exec(ctx.font).pop();
+      if (text_w < 5) {
+        ctx.font = ctx.font.replace(/\d+/, function($1) {
+          return +$1 - 2;
+        });
+        checkFontSize();
+      }
+    };
     w = +data[0].replace(/x.+$/i, "");
     h = +data[0].replace(/^.+x/i, "");
     ctx.canvas.width = w;
@@ -50,8 +60,7 @@ var DummyImage = {
     ctx.fillRect(0, 0, w, h);
     ctx.fillStyle = text;
     ctx.font = d.font;
-    text_w = w - ctx.measureText(w + " X " + h).width;
-    text_h = h + +/\d+/.exec(ctx.font).pop();
+    checkFontSize();
     ctx.fillText(w + " X " + h, text_w / 2, text_h / 2);
     d._writeImage(img);
   },

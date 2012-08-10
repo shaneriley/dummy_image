@@ -1,4 +1,4 @@
-# Dummy Image for Javascript, Version 1.1.0
+# Dummy Image for Javascript, Version 1.2.0
 
 A method of including dummy images in your HTML as img tags without having
 to export individual dummy images of varying sizes.
