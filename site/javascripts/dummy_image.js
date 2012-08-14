@@ -1,4 +1,4 @@
-/* DummyImage version 1.2.0
+/* DummyImage version 1.2.1
  * (c) 2012 Shane Riley
  * Licensed under GPL 2.0 (http://www.gnu.org/licenses/gpl-2.0.html)
  * Source hosted at http://www.gnu.org/licenses/gpl-2.0.html
@@ -12,6 +12,7 @@ var DummyImage = {
   font: "16px Tahoma",
   __canvas__: document.createElement("canvas"),
   init: function(opts) {
+    if (!("getContext" in this.__canvas__)) { return; }
     this._extend(this, opts);
     this.__ctx__ = this.__canvas__.getContext("2d");
     this.path_rxp = new RegExp("^.*/" + DummyImage.path + "/");
