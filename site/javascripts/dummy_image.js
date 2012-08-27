@@ -1,10 +1,11 @@
-/* DummyImage version 1.2.1
+/* DummyImage version 1.2.2
  * (c) 2012 Shane Riley
  * Licensed under GPL 2.0 (http://www.gnu.org/licenses/gpl-2.0.html)
  * Source hosted at http://www.gnu.org/licenses/gpl-2.0.html
  */
 var DummyImage = {
   path: "placeholder",
+  supported: true,
   colors: {
     text: "333333",
     background: "ececec"
@@ -12,7 +13,10 @@ var DummyImage = {
   font: "16px Tahoma",
   __canvas__: document.createElement("canvas"),
   init: function(opts) {
-    if (!("getContext" in this.__canvas__)) { return; }
+    if (!("getContext" in this.__canvas__)) {
+      this.supported = false;
+      return;
+    }
     this._extend(this, opts);
     this.__ctx__ = this.__canvas__.getContext("2d");
     this.path_rxp = new RegExp("^.*/" + DummyImage.path + "/");
@@ -73,6 +77,7 @@ var DummyImage = {
     img.src = canvas.toDataURL();
   },
   generate: function(els, overrides) {
+    if (!DummyImage.supported) { return; }
     var imgs = [],
         opts = overrides || undefined;
     if (!els || !/NodeList|HTMLImageElement/.test(els.constructor)) {
